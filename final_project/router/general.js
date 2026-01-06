@@ -20,12 +20,12 @@ public_users.get('/isbn/:isbn',function (req, res) {
  const isbn = req.params.isbn;
  const bookIsbn = books[isbn] || null;
   //Write your code here
-  return res.send(bookIsbn);
+  return res.send(JSON.stringify({bookIsbn}, null, 4));
  });
   
 // Get book details based on author
 public_users.get('/author/:author',function (req, res) {
-  //Write your code here
+    const isbn = req.params.isbn;
   return res.status(300).json({message: "Yet to be implemented"});
 });
 
